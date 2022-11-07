@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_button_uppercase">@dimen/_12sdp</dimen>
+    <dimen name="text_title_toolbar">@dimen/_14sdp</dimen>
+    <dimen name="text_title_item_list">@dimen/_13sdp</dimen>
+    <dimen name="text_button_camelcase">@dimen/_12sdp</dimen>
+    <dimen name="text_main_menu">@dimen/_10sdp</dimen>
+
+    <dimen name="_16sp">@dimen/_14sdp</dimen>
+    <dimen name="_15sp">@dimen/_13sdp</dimen>
+    <dimen name="_14sp">@dimen/_12sdp</dimen>
+
+    <!--padding-->
+    <dimen name="dimen_padding_drawable_icon">@dimen/_9sdp</dimen>
+
+    <!--margin-->
+    <dimen name="dimen_margin">@dimen/_14sdp</dimen>
+    <dimen name="dimen_margin_small">@dimen/_7sdp</dimen>
+    <dimen name="dimen_margin_medium">@dimen/_20sdp</dimen>
+    <dimen name="dimen_margin_large">@dimen/_27sdp</dimen>
+    <dimen name="dimen_margin_space_text">@dimen/_4sdp</dimen>
+    <dimen name="dimen_margin_top_statusbar">@dimen/_40sdp</dimen>
+
+    <!--image-->
+    <dimen name="dimen_onboarding_image_height">@dimen/_264sdp</dimen>
+    <dimen name="dimen_onboarding_image_width">@dimen/_206sdp</dimen>
+    <dimen name="dimen_image_splash_screen">@dimen/_100sdp</dimen>
+    <dimen name="dimen_image_profile">@dimen/_100sdp</dimen>
+    <dimen name="dimen_image_profile_small">@dimen/_67sdp</dimen>
+    <dimen name="dimen_image_personalize">@dimen/_67sdp</dimen>
+    <dimen name="dimen_icon">@dimen/_27sdp</dimen>
+    <dimen name="dimen_icon_small">@dimen/_20sdp</dimen>
+    <dimen name="dimen_icon_category_home">@dimen/_47sdp</dimen>
+    <dimen name="dimen_icon_extra_small">@dimen/_14sdp</dimen>
+    <dimen name="dimen_image_add_subscribe">@dimen/_67sdp</dimen>
+    <dimen name="dimen_image_profile_home">@dimen/_30sdp</dimen>
+    <dimen name="dimen_icon_notification">@dimen/_30sdp</dimen>
+    <dimen name="dimen_icon_top_bar">@dimen/_31sdp</dimen>
+    <dimen name="dimen_icon_play_button">@dimen/_44sdp</dimen>
+
+    <!--button-->
+    <dimen name="dimen_height_button">@dimen/_40sdp</dimen>
+    <dimen name="dimen_size_radio_button_circle">@dimen/_17sdp</dimen>
+
+    <!--radius-->
+    <dimen name="dimen_radius_button">@dimen/_100sdp</dimen>
+    <dimen name="dimen_radius_card">@dimen/_24sdp</dimen>
+    <dimen name="dimen_radius_small">@dimen/_14sdp</dimen>
+    <dimen name="dimen_radius_card_subscribe">@dimen/_20sdp</dimen>
+
+    <!--toolbar-->
+    <dimen name="dimen_height_toolbar">@dimen/_47sdp</dimen>
+
+    <!--edit-->
+    <dimen name="dimen_height_edit_verification">@dimen/_59sdp</dimen>
+    <dimen name="dimen_height_edit_code">@dimen/_40sdp</dimen>
+
+    <dimen name="viewpager_next_item_visible">@dimen/_67sdp</dimen>
+    <dimen name="viewpager_current_item_horizontal_margin">@dimen/_95sdp</dimen>
+
+    <dimen name="top_sheet_modal_elevation">16dp</dimen>
+
+    <integer name="right" />
+
+    <dimen name="design_bottom_navigation_height">@dimen/_49sdp</dimen>
+</resources>

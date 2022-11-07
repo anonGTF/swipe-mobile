@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Color -->
+    <color name="colorPrimary">#374151</color>
+    <color name="colorPrimaryDark">#6B7280</color>
+
+    <!-- Basic Color -->
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#878787</color>
+    <color name="black">#000000</color>
+    <color name="green">#009688</color>
+
+    <!--Component Color-->
+    <color name="dark_background">#666666</color>
+    <color name="transparent_dark_background">#808E8E8E</color>
+
+    <color name="gray_border_edittext">#CECECE</color>
+    <color name="gray_10">#F9FAFB</color>
+    <color name="gray_80_heading">#374151</color>
+    <color name="gray_80_heading_32percent">#52374151</color>
+    <color name="gray_60">#6B7280</color>
+    <color name="gray_90">#1F2937</color>
+    <color name="gray_50">#9CA3AF</color>
+
+    <color name="gray_70_body">#4B5563</color>
+    <color name="gray_70_body_32percent">#524B5563</color>
+    <color name="gray_card">#9C9C9C</color>
+    <color name="gray_separator">#D8D8D8</color>
+    <color name="gray_card_subs">#4D9B9B9B</color>
+    <color name="gray_bottomnav_active">#797D85</color>
+    <color name="gray_bottomnav_inactive">#CFCFCF</color>
+    <color name="gray_search_edit">#B3B7C6</color>
+    <color name="gray_progress_page_continue_reading">#BECFEB</color>
+    <color name="gray_progress_continue_reading">#D4DFE3</color>
+    <color name="gray_search_add_filter_category">#636E7B</color>
+    <color name="gray_tag_background">#E5E5E5</color>
+    <color name="gray_toast_background">#AFAFAF</color>
+    <color name="gray_card_background_contact">#E5E7EB</color>
+    <color name="gray_background_notification">#EBEBEB</color>
+    <color name="gray_background_avatar">#D9D9D9</color>
+    <color name="gray_rate_us_active">#707E96</color>
+    <color name="gray_rate_us_active_32percent">#52707E96</color>
+    <color name="gray_short_detail_book">#EEEEEE</color>
+    <color name="gray_card_question">#E8E8E8</color>
+
+    <color name="blue_icon_button_play_content_book">#E8F4F8</color>
+
+    <color name="gray_border_date">#778193</color>
+
+    <color name="gray_wave_line_gradient_first">#9E92C6</color>
+    <color name="gray_wave_line_gradient_second">#6BD9C4E9</color>
+
+    <color name="gray_wave_circle_gradient_first">@color/light_blue_primary_2</color>
+    <color name="gray_wave_circle_gradient_second">#80A7E2EB</color>
+
+    <color name="red_error">#E78787</color>
+    <color name="red_dark">#BF1313</color>
+
+    <!-- Grayscale -->
+
+    <!--Transparent-->
+    <color name="black_transparent80">#80000000</color>
+    <color name="black_text_40_transparent_20">#339E9E9E</color>
+
+    <!--shimmer-->
+    <color name="shimmer_color">#dddddd</color>
+
+    <!--hifi color-->
+    <!--text color-->
+    <color name="black_text_100">#0D0D0D</color>
+    <color name="black_text_90">#252525</color>
+    <color name="black_text_80">#3D3D3D</color>
+    <color name="black_text_70">#565656</color>
+    <color name="black_text_60">#6E6E6E</color>
+    <color name="black_text_50">#868686</color>
+    <color name="black_text_40">#9E9E9E</color>
+    <color name="black_text_30">#B6B6B6</color>
+    <color name="black_text_20">#CFCFCF</color>
+    <color name="black_text_10">#E7E7E7</color>
+    <color name="black_text_80_30_percent">#523D3D3D</color>
+
+
+    <!--orange primary colors-->
+    <color name="orange_primary_1">#F8A268</color>
+    <color name="orange_primary">#FF7E27</color>
+    <color name="orange_primary_2">#F05A25</color>
+    <color name="orange_primary_3">#B04425</color>
+
+    <!--light blue primary colors-->
+    <color name="light_blue_primary_1">#92D5DE</color>
+    <color name="light_blue_primary">#48CBDE</color>
+    <color name="light_blue_primary_2">#2F7DC0</color>
+    <color name="light_blue_primary_3">#2F7DC0</color>
+
+    <!--turquoise secondary colors-->
+    <color name="turquoise_secondary_1">#B6E0D7</color>
+    <color name="turquoise_secondary">#73C7B5</color>
+    <color name="turquoise_secondary_2">#51BE9F</color>
+    <color name="turquoise_secondary_3">#00A683</color>
+
+    <!--green secondary colors-->
+    <color name="green_secondary_1">#D3DF4D</color>
+    <color name="green_secondary">#B3D234</color>
+    <color name="green_secondary_2">#57AA46</color>
+    <color name="green_secondary_3">#297038</color>
+
+    <!--yellow secondary colors-->
+    <color name="yellow_secondary_1">#FBF4A2</color>
+    <color name="yellow_secondary">#FCE32D</color>
+    <color name="yellow_secondary_2">#F6B917</color>
+    <color name="yellow_secondary_3">#F49D1F</color>
+
+    <!--salmon secondary colors-->
+    <color name="salmon_secondary_1">#F8BAB9</color>
+    <color name="salmon_secondary">#F1665A</color>
+    <color name="salmon_secondary_2">#ED3533</color>
+    <color name="salmon_secondary_3">#8A242A</color>
+
+    <!--purple secondary colors-->
+    <color name="purple_secondary_1">#C0B1D1</color>
+    <color name="purple_secondary">#9E92C6</color>
+    <color name="purple_secondary_2">#946EAF</color>
+    <color name="purple_secondary_3">#754E9F</color>
+    <color name="purple_secondary_2_20_percent">#33946EAF</color>
+
+    <!--gray secondary colors-->
+    <color name="gray_secondary_1">#F0EEEF</color>
+    <color name="gray_secondary">#B8B7B9</color>
+    <color name="gray_secondary_2">#79787B</color>
+    <color name="gray_secondary_3">#343537</color>
+
+    <!--shades orange color-->
+    <color name="orange_shades_100">#F37D2B</color>
+    <color name="orange_shades_90">#F48A40</color>
+    <color name="orange_shades_80">#F59755</color>
+    <color name="orange_shades_70">#F7A46B</color>
+    <color name="orange_shades_60">#F8B180</color>
+    <color name="orange_shades_50">#F9BE95</color>
+    <color name="orange_shades_40">#FACBAA</color>
+    <color name="orange_shades_30">#FBD8BF</color>
+    <color name="orange_shades_20">#FDE5D5</color>
+    <color name="orange_shades_10">#FEF2EA</color>
+
+    <!--shades turqoise color-->
+    <color name="turquoise_shades_100">#73C7B5</color>
+    <color name="turquoise_shades_90">#81CDBC</color>
+    <color name="turquoise_shades_80">#8FD2C4</color>
+    <color name="turquoise_shades_70">#9DD8CB</color>
+    <color name="turquoise_shades_60">#ABDDD3</color>
+    <color name="turquoise_shades_50">#B9E3DA</color>
+    <color name="turquoise_shades_40">#C7E9E1</color>
+    <color name="turquoise_shades_30">#D5EEE9</color>
+    <color name="turquoise_shades_20">#E3F4F0</color>
+    <color name="turquoise_shades_10">#F1F9F8</color>
+
+    <!--shades yellow color-->
+    <color name="yellow_shades_100">#FCE32D</color>
+    <color name="yellow_shades_90">#FCE642</color>
+    <color name="yellow_shades_80">#FDE957</color>
+    <color name="yellow_shades_70">#FDEB6C</color>
+    <color name="yellow_shades_60">#FDEE81</color>
+    <color name="yellow_shades_50">#FDF196</color>
+    <color name="yellow_shades_40">#FEF4AB</color>
+    <color name="yellow_shades_30">#FEF7C0</color>
+    <color name="yellow_shades_20">#FEF9D5</color>
+    <color name="yellow_shades_10">#FFFCEA</color>
+
+    <!--shades purple color-->
+    <color name="purple_shades_100">#9E92C6</color>
+    <color name="purple_shades_90">#A89DCC</color>
+    <color name="purple_shades_80">#B1A8D1</color>
+    <color name="purple_shades_70">#BBB3D7</color>
+    <color name="purple_shades_60">#C5BEDD</color>
+    <color name="purple_shades_50">#CFC8E3</color>
+    <color name="purple_shades_40">#D8D3E8</color>
+    <color name="purple_shades_30">#E2DEEE</color>
+    <color name="purple_shades_20">#ECE9F4</color>
+    <color name="purple_shades_10">#F5F4F9</color>
+
+    <!--shades blue color-->
+    <color name="blue_shades_100">#50C5D8</color>
+    <color name="blue_shades_90">#62CBDC</color>
+    <color name="blue_shades_80">#73D1E0</color>
+    <color name="blue_shades_70">#85D6E4</color>
+    <color name="blue_shades_60">#96DCE8</color>
+    <color name="blue_shades_50">#A7E2EB</color>
+    <color name="blue_shades_40">#B9E8EF</color>
+    <color name="blue_shades_30">#CBEEF3</color>
+    <color name="blue_shades_20">#DCF3F7</color>
+    <color name="blue_shades_10">#EDF9FB</color>
+    <color name="blue_background_welcome">#D3F3F1</color>
+
+    <!--shades green color-->
+    <color name="green_shades_100">#B3D234</color>
+    <color name="green_shades_90">#BBD648</color>
+    <color name="green_shades_80">#C2DB5D</color>
+    <color name="green_shades_70">#CADF71</color>
+    <color name="green_shades_60">#D1E485</color>
+    <color name="green_shades_50">#D9E899</color>
+    <color name="green_shades_40">#E1EDAE</color>
+    <color name="green_shades_30">#E8F2C2</color>
+    <color name="green_shades_20">#F0F6D6</color>
+    <color name="green_shades_10">#F7FBEB</color>
+
+    <!--shades red color-->
+    <color name="red_shades_100">#F1665A</color>
+    <color name="red_shades_90">#F2756B</color>
+    <color name="red_shades_80">#F4857B</color>
+    <color name="red_shades_70">#F5948B</color>
+    <color name="red_shades_60">#F7A39C</color>
+    <color name="red_shades_50">#F8B3AC</color>
+    <color name="red_shades_40">#F9C2BD</color>
+    <color name="red_shades_30">#FBD1CE</color>
+    <color name="red_shades_20">#FCE0DE</color>
+    <color name="red_shades_10">#FEF0EF</color>
+
+    <!--shades light_grey color-->
+    <color name="light_grey_shades_100">#B8B7B9</color>
+    <color name="light_grey_shades_90">#BFBEC0</color>
+    <color name="light_grey_shades_80">#C6C5C7</color>
+    <color name="light_grey_shades_70">#CDCDCE</color>
+    <color name="light_grey_shades_60">#D4D4D5</color>
+    <color name="light_grey_shades_50">#DBDBDC</color>
+    <color name="light_grey_shades_40">#E3E2E3</color>
+    <color name="light_grey_shades_30">#EAE9EA</color>
+    <color name="light_grey_shades_20">#F1F1F1</color>
+    <color name="light_grey_shades_10">#F8F8F8</color>
+
+    <!--danger color-->
+    <color name="danger_main">#FF414C</color>
+    <color name="danger_border">#FF858D</color>
+    <color name="danger_surface">#FFB3B7</color>
+
+    <!--success color-->
+    <color name="success_main">#60AE48</color>
+    <color name="success_border">#99CB8A</color>
+    <color name="success_surface">#BFDFB6</color>
+
+    <!--warning color-->
+    <color name="warning_main">#FABD00</color>
+    <color name="warning_border">#FCD55C</color>
+    <color name="warning_surface">#FDE599</color>
+
+    <!--separator-->
+    <color name="separator">#F2F2F2</color>
+</resources>

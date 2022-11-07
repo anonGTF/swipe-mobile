@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="@dimen/_40sdp"
+        android:height="@dimen/_40sdp"
+        android:gravity="center"
+        android:drawable="@drawable/bg_circle_border_orange_primary" />
+</layer-list>

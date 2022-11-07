@@ -1,0 +1,974 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Swipe" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
+    <style name="HeaderTitle.Hide" parent="@style/Widget.MaterialComponents.MaterialCalendar.HeaderTitle">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">@dimen/dimen_radius_card</item>
+    </style>
+
+    <style name="MaterialDateHeaderSelection" parent="@style/Widget.MaterialComponents.MaterialCalendar.HeaderSelection">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+    </style>
+
+    <style name="Widget.App.MaterialCalendar.DayTextView" parent="Widget.MaterialComponents.MaterialCalendar.DayTextView">
+        <item name="android:textAppearance">@style/Caption.Regular.12</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/black_text_60</item>
+        <!--selected Item color-->
+        <item name="colorControlActivated">#2196F3</item>
+        <!-- arrow bordercolor(<>)-->
+        <item name="android:selectableItemBackgroundBorderless">@color/purple_secondary</item>
+        <!-- Highlight item color-->
+        <item name="colorControlHighlight">#d50000</item>
+        <!--Calender Background color -->
+        <item name="android:windowBackground">@color/orange_primary</item>
+        <!-- Ok Cancel Color-->
+        <item name="android:textColor">#4CAF50</item>
+        <!-- Week TextColor-->
+        <item name="android:textColorSecondary">#E91E63</item>
+        <!-- Calender Number color arrow color (< >) -->
+        <item name="android:textColorPrimary">#3F51B5</item>
+        <!--day , month-->
+        <item name="android:textColorPrimaryInverse">#0ff</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <!--below is the style for transparent activity and here we are using no action bar.-->
+    <style name="Theme.AppCompat.Translucent" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="customActionBar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:titleTextStyle">@style/customActionBar.Text</item>
+    </style>
+
+    <style name="customActionBar.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.RemoveSplashScreenTheme" parent="@style/Theme.Swipe">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="BtnLayout">
+        <item name="android:background">@drawable/bg_button_rounded</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="BtnText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/baloo2_semi_bold</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="BtnText.Medium" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/gray_80_heading</item>
+        <item name="android:fontFamily">@font/baloo2_semi_bold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="BtnText.Medium.White" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/baloo2_semi_bold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="BtnText.Medium.Font" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/gray_80_heading</item>
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="BtnText.Small" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/gray_80_heading</item>
+        <item name="android:fontFamily">@font/baloo2_semi_bold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="BtnText.Extra.Small" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">@font/baloo2_semi_bold</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="BtnText.Title">
+        <item name="android:textSize">@dimen/_16sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:fontFamily">@font/res_roboto_regular</item>
+    </style>
+
+    <!--<style name="BtnText.Small">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+    </style>-->
+
+    <style name="BtnText.Small.FontMedium">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+    </style>
+
+    <style name="BtnText.TextOnly" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+
+    <style name="BtnText.Normal">
+        <item name="android:textSize">@dimen/_14sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:fontFamily">@font/res_roboto_regular</item>
+    </style>
+
+    <!--<style name="BtnText.Medium">
+        <item name="android:textSize">@dimen/_14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:fontFamily">@font/res_roboto_regular</item>
+    </style>-->
+
+    <style name="BtnText.Large">
+        <item name="android:textSize">@dimen/_15sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:fontFamily">@font/res_roboto_regular</item>
+    </style>
+
+    <style name="ClickableCardView" parent="Base.CardView">
+        <item name="android:layout_marginStart">@dimen/_5sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_5sdp</item>
+        <item name="android:layout_marginRight">@dimen/_5sdp</item>
+        <item name="android:layout_marginLeft">@dimen/_5sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_5sdp</item>
+        <item name="cardCornerRadius">@dimen/_2sdp</item>
+        <item name="cardElevation">@dimen/_2sdp</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="ClickableView">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <!--start text custom-->
+    <style name="Text" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Text.Title" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Title.Large" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Title.Personalize" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Title.MediumFont" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Welcome.Name" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <style name="Text.Title.Small" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Title.Small.FontMedium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Title.ViewAll" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Title.Toast" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Title.White" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Title.Black" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Title.Medium.White" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Title.Medium.Gray" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Title.Large.White" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_27ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Title.Book" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_semi_bold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Description" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Description.Bold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Description.Task" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Description.Task.FontRegular" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Title.Menu.Home" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Description.Large.Black" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Description.Tag" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Description.Medium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+
+    <style name="Text.Description.Disabled" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_card</item>
+    </style>
+
+    <style name="Text.Description.White" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.025</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Button.Skip" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_semi_bold</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Alert.Error" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/red_error</item>
+    </style>
+
+    <style name="Text.Label.EditText" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="Text.Label.EditText.Bold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.7</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="Text.Label.Tab.Regular" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.7</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="Text.Description.Disabled.Medium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_regular</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/gray_card</item>
+    </style>
+
+    <style name="Text.Label.RadioButton" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="Text.NumberPicker">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/black_text_80</item>
+    </style>
+
+    <!--hifi text style-->
+    <style name="Headline1" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_80ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline2" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_54ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline3" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_40ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline4" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_34ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline5" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_27ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline6" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline7" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline8" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline9" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline10" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_bold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <!--semibold-->
+    <style name="Headline1.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_80ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline2.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_54ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline3.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_40ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline4.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_34ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline5.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_27ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline6.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline7.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline8.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline9.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline10.SemiBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <!--medium-->
+    <style name="Headline5.Medium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="android:textSize">@dimen/_27ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline6.Medium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="android:textSize">@dimen/_22ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline7.Medium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline8.Medium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline9.Medium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Headline10.Medium" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_medium</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <!--body text regular-->
+    <style name="BodyText.Regular.24" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BodyText.Regular.20" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">@dimen/_17ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BodyText.Regular.18" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BodyText.Regular.16" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BodyText.Regular.14" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <!--body text semi bold-->
+    <style name="BodyText.SemiBold.18" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BodyText.SemiBold.16" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BodyText.SemiBold.14" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <!--caption text-->
+    <style name="Caption.Regular.12" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Caption.SemiBold.12" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Caption.SemiBold.10" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="Caption.Light.10" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/opensans_light</item>
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <!--toolbar-->
+    <style name="Text.Toolbar" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/fredoka_semibold</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/black_text_80</item>
+    </style>
+    <!--end text custom-->
+
+    <!--start edittext-->
+    <style name="EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+    <style name="EditText.Pin" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/baloo2_medium</item>
+        <item name="android:textSize">@dimen/_20ssp</item>
+        <item name="android:textColor">@color/gray_80_heading</item>
+    </style>
+    <style name="AutoComplete" parent="Widget.AppCompat.AutoCompleteTextView">
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/black_text_80</item>
+        <item name="android:background">@drawable/bg_rounded_border_gray_edittext</item>
+        <item name="android:paddingTop">@dimen/_11sdp</item>
+        <item name="android:paddingBottom">@dimen/_11sdp</item>
+        <item name="android:paddingStart">@dimen/_10sdp</item>
+        <item name="android:paddingEnd">@dimen/_10sdp</item>
+    </style>
+    <!--end edit text-->
+
+    <!--spinner-->
+    <style name="SpinnerCustom" parent="android:Widget.Material.Spinner">
+        <item name="android:background">@drawable/bg_rounded_border_gray_edittext</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/black_text_80</item>
+        <item name="android:paddingTop">@dimen/_11sdp</item>
+        <item name="android:paddingBottom">@dimen/_11sdp</item>
+        <item name="android:paddingStart">@dimen/_10sdp</item>
+        <item name="android:paddingEnd">@dimen/_10sdp</item>
+        <item name="android:dropDownVerticalOffset">@dimen/dimen_margin_small</item>
+        <item name="android:popupBackground">@drawable/bg_rounded_20_white</item>
+    </style>
+    <!--end spinner-->
+
+    <!--start dialog custom-->
+    <style name="TransparentDialog" parent="android:Theme.Holo.Dialog.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">92%</item>
+        <item name="android:windowMinWidthMinor">92%</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.45</item>
+    </style>
+
+    <style name="CustomDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowMinWidthMinor">75%</item>
+    </style>
+    <!--end dialog-->
+
+    <!--bottomsheet-->
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_rounded_top_white</item>
+    </style>
+    <!--end bottomsheet-->
+
+    <!--start imagepicker-->
+    <style name="Theme.Transparent.ImagePicker"
+        parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+    <!--end imagepicker-->
+
+    <!--bottom navigation-->
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textColor">@color/black_text_20</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textColor">@color/orange_primary</item>
+    </style>
+
+    <style name="BottomNavigationView.Active.Purple" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textColor">@color/purple_secondary_2</item>
+    </style>
+
+    <style name="FABTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- ...whatever else you declare in your app theme.. -->
+        <!-- Set colorSecondary to change background of FAB (backgroundTint) -->
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <!-- Customize colorSecondary to change icon/text of FAB (maps to tint and rippleColor) -->
+        <item name="colorOnSecondary">@android:color/white</item>
+    </style>
+
+    <!--end bottom navigation-->
+
+    <!--  Chip text      -->
+    <style name="chipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:fontFamily">@font/baloo2_bold</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
+        <item name="android:lineSpacingMultiplier">0.8</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <!-- Chip style-->
+    <style name="Colors.MaterialComponents.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textAppearance">@style/chipText</item>
+        <item name="backgroundColor">@color/color_choice_chip_background_color</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/color_choice_chip_text_color</item>
+        <item name="android:paddingEnd">@dimen/_11sdp</item>
+        <item name="paddingStart">@dimen/_11sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+    </style>
+
+    <style name="Chip.Default.ColorPrimary" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textAppearance">@style/Text.Description.Medium</item>
+        <item name="backgroundColor">@color/gray_80_heading</item>
+        <item name="chipStrokeColor">@color/colorPrimary</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingEnd">@dimen/_11sdp</item>
+        <item name="paddingStart">@dimen/_11sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+    </style>
+
+    <style name="Radio.button.Custom.Circle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_height">@dimen/_47sdp</item>
+        <item name="android:layout_width">@dimen/_47sdp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAppearance">@style/BodyText.SemiBold.14</item>
+        <item name="android:background">@drawable/bg_circle_chip</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:textColor">@color/color_orange_primary_choice_chip_text_color</item>
+    </style>
+
+    <style name="Chip.Default" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textAppearance">@style/BodyText.Regular.14</item>
+        <item name="chipBackgroundColor">@color/color_orange_primary_choice_chip_background_color</item>
+        <item name="chipStrokeColor">@color/orange_primary</item>
+        <item name="chipStrokeWidth">@dimen/_1sdp</item>
+        <item name="android:textColor">@color/color_orange_primary_choice_chip_text_color</item>
+        <item name="android:paddingEnd">@dimen/_13sdp</item>
+        <item name="paddingStart">@dimen/_13sdp</item>
+        <item name="android:paddingTop">@dimen/_4sdp</item>
+        <item name="android:paddingBottom">@dimen/_4sdp</item>
+        <item name="chipSpacingHorizontal">@dimen/_10sdp</item>
+    </style>
+
+    <style name="Chip.Green.Secondary.3" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textAppearance">@style/BodyText.Regular.14</item>
+        <item name="chipBackgroundColor">@color/color_green_secondary_3_choice_chip_background_color</item>
+        <item name="chipStrokeColor">@color/green_secondary_3</item>
+        <item name="chipStrokeWidth">@dimen/_1sdp</item>
+        <item name="android:textColor">@color/color_green_secondary_3_choice_chip_text_color</item>
+        <item name="android:paddingEnd">@dimen/_13sdp</item>
+        <item name="paddingStart">@dimen/_13sdp</item>
+        <item name="android:paddingTop">@dimen/_4sdp</item>
+        <item name="android:paddingBottom">@dimen/_4sdp</item>
+        <item name="chipSpacingHorizontal">@dimen/_10sdp</item>
+    </style>
+
+    <style name="Chip.Default.NoBorder" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textAppearance">@style/BodyText.Regular.14</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingEnd">@dimen/_13sdp</item>
+        <item name="android:paddingStart">@dimen/_13sdp</item>
+        <item name="android:paddingTop">@dimen/_4sdp</item>
+        <item name="android:paddingBottom">@dimen/_4sdp</item>
+        <item name="chipSpacingHorizontal">@dimen/_10sdp</item>
+    </style>
+
+    <!--topsheet style-->
+    <style name="Animation.Design.TopSheetDialog" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/top_sheet_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/top_sheet_dialog_out</item>
+    </style>
+
+    <style name="Widget.Design.TopSheet.Modal" parent="android:Widget">
+        <item name="android:background">?android:attr/colorBackground</item>
+        <item name="android:elevation">@dimen/top_sheet_modal_elevation</item>
+        <item name="behavior_hideable">true</item>
+    </style>
+
+    <style name="Theme.Design.TopSheetDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
+        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
+    </style>
+
+    <style name="Theme.Design.Light.TopSheetDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Design.TopSheetDialog</item>
+        <item name="bottomSheetStyle">@style/Widget.Design.TopSheet.Modal</item>
+    </style>
+    <!--end topsheet style-->
+
+    <style name="cardCircle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>
