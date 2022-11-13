@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary Color -->
-    <color name="colorPrimary">#374151</color>
+    <color name="colorPrimary">#229FCC</color>
     <color name="colorPrimaryDark">#6B7280</color>
 
     <!-- Basic Color -->
@@ -100,7 +100,7 @@
 
     <!--green secondary colors-->
     <color name="green_secondary_1">#D3DF4D</color>
-    <color name="green_secondary">#B3D234</color>
+    <color name="green_secondary">#8EBB5C</color>
     <color name="green_secondary_2">#57AA46</color>
     <color name="green_secondary_3">#297038</color>
 

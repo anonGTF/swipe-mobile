@@ -15,9 +15,9 @@
 
     <!--margin-->
     <dimen name="dimen_margin">@dimen/_14sdp</dimen>
-    <dimen name="dimen_margin_small">@dimen/_7sdp</dimen>
-    <dimen name="dimen_margin_medium">@dimen/_20sdp</dimen>
-    <dimen name="dimen_margin_large">@dimen/_27sdp</dimen>
+    <dimen name="dimen_margin_small">@dimen/_8sdp</dimen>
+    <dimen name="dimen_margin_medium">@dimen/_16sdp</dimen>
+    <dimen name="dimen_margin_large">@dimen/_24sdp</dimen>
     <dimen name="dimen_margin_space_text">@dimen/_4sdp</dimen>
     <dimen name="dimen_margin_top_statusbar">@dimen/_40sdp</dimen>
 
@@ -60,7 +60,7 @@
 
     <dimen name="top_sheet_modal_elevation">16dp</dimen>
 
-    <integer name="right" />
+<!--    <integer name="right" />-->
 
     <dimen name="design_bottom_navigation_height">@dimen/_49sdp</dimen>
 </resources>

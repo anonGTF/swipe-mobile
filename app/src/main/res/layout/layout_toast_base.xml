@@ -47,7 +47,7 @@
                 android:id="@+id/ivRightDrawable"
                 android:layout_width="@dimen/_17sdp"
                 android:layout_height="@dimen/_17sdp"
-                app:srcCompat="@drawable/ic_x_white"
+                app:srcCompat="@drawable/ic_round_close"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

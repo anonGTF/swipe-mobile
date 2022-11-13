@@ -3,4 +3,8 @@
     <string name="txt_yes">Yes</string>
     <string name="txt_no">No</string>
     <string name="txt_button_add">Add</string>
+    <plurals name="txt_days_left">
+        <item quantity="one">· %d day ago</item>
+        <item quantity="other">· %d days ago</item>
+    </plurals>
 </resources>

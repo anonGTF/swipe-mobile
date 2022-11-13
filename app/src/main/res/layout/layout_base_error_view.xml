@@ -15,8 +15,8 @@
         android:layout_marginTop="@dimen/dimen_margin_medium"
         android:layout_marginStart="@dimen/dimen_margin_medium"
         android:layout_marginEnd="@dimen/dimen_margin_medium"
-        android:background="@drawable/bg_button_rounded_primary"
-        android:text="@string/txt_retry"
+        android:background="@drawable/bg_button_rounded"
+        android:text="Retry"
         android:textColor="@drawable/color_button_primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitleErrorView"
-        tools:text="@string/txt_error_connection" />
+        tools:text="No Internet Connection" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitleErrorView"
@@ -64,6 +64,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgErrorView"
-        tools:text="@string/txt_error_no_internet" />
+        tools:text="The internet connection appears to be offline" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
