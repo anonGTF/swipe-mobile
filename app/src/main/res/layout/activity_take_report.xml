@@ -6,4 +6,286 @@
     android:layout_height="match_parent"
     tools:context=".ui.report.TakeReportActivity">
 
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_take_report"
+        android:layout_marginBottom="80dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="true"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/opensans_bold"
+                tools:text="Report Title"
+                app:layout_constraintTop_toBottomOf="@id/imageSlider"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                tools:text="Category"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_reporter_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Reporter"
+                app:layout_constraintTop_toBottomOf="@id/chip_category"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_reporter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/opensans_regular"
+                tools:text="Reporter Name"
+                app:layout_constraintTop_toBottomOf="@id/tv_reporter_text"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Location"
+                app:layout_constraintTop_toBottomOf="@id/tv_reporter"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/opensans_regular"
+                tools:text="Location"
+                app:layout_constraintTop_toBottomOf="@id/tv_location_text"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_desc_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Description"
+                app:layout_constraintTop_toBottomOf="@id/tv_location"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/opensans_regular"
+                tools:text="Desc"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc_text"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_initial_donation_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Initial Donation"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_initial_donation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/opensans_regular"
+                tools:text="Rp 100.0000"
+                app:layout_constraintTop_toBottomOf="@id/tv_initial_donation_text"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_is_enough_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                android:layout_marginEnd="@dimen/dimen_margin_medium"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/opensans_regular"
+                android:text="Is donation enough?"
+                app:layout_constraintTop_toBottomOf="@id/tv_initial_donation"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <RadioGroup
+                android:id="@+id/rb_is_enough"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/dimen_margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/tv_is_enough_text">
+
+                <RadioButton android:id="@+id/radio_pirates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"/>
+
+                <RadioButton android:id="@+id/radio_ninjas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_donation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="14sp"
+                android:lineSpacingExtra="8sp"
+                android:text="Expected Donation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rb_is_enough" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_donation"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_donation">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_donation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:hint="Expected Donation"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/opensans_regular"
+                android:textSize="14sp"
+                android:lineSpacingExtra="8sp"
+                android:text="Person in Charge"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tf_donation" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_pic"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pic">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:hint="Person in Charge"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_take_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Take Report"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:backgroundTint="@color/green_secondary"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

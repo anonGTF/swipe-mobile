@@ -6,4 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".ui.donate.WithdrawDonationActivity">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_bank_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/img_visa"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:src="@drawable/img_visa"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_card_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="3327102602020021"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/opensans_bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/img_visa"/>
+
+            <TextView
+                android:id="@+id/tv_card_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Galih Tegar Febrianto"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/opensans_regular"
+                app:layout_constraintTop_toBottomOf="@id/tv_card_number"
+                app:layout_constraintStart_toEndOf="@id/img_visa"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/opensans_regular"
+        android:textSize="14sp"
+        android:lineSpacingExtra="8sp"
+        android:text="Amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_bank_account" />
+
+    <TextView
+        android:id="@+id/tv_amount_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/opensans_bold"
+        tools:text="Rp 700.000"
+        app:layout_constraintTop_toBottomOf="@id/tv_amount"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_withdraw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Withdraw"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:backgroundTint="@color/green_secondary"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
