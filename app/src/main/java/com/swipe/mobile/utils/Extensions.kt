@@ -11,7 +11,7 @@ import io.realm.RealmResults
 import java.text.SimpleDateFormat
 import java.util.*
 
-const val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w600_and_h900_bestv2"
+const val BASE_IMAGE_URL = "https://eponline.com/-/media/ENV/eponline/Images/2019/11/3EnvironmentalIssues.jpg"
 
 fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
     val formatter = SimpleDateFormat(format, locale)
@@ -30,6 +30,8 @@ fun Boolean.toInt() = if (this) 1 else 0
 fun Int.toBoolean() = this == 1
 
 fun Int?.orZero() = this ?: 0
+
+fun Int?.orOne() = this ?: 1
 
 fun Double?.orZero() = this ?: 0.0
 

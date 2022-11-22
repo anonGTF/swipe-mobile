@@ -193,12 +193,12 @@
                 android:layout_marginStart="@dimen/dimen_margin_medium"
                 app:layout_constraintTop_toBottomOf="@id/tv_is_enough_text">
 
-                <RadioButton android:id="@+id/radio_pirates"
+                <RadioButton android:id="@+id/radio_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"/>
 
-                <RadioButton android:id="@+id/radio_ninjas"
+                <RadioButton android:id="@+id/radio_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"/>
@@ -212,6 +212,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/opensans_regular"
                 android:textSize="14sp"
+                android:visibility="gone"
                 android:lineSpacingExtra="8sp"
                 android:text="Expected Donation"
                 app:layout_constraintStart_toStartOf="parent"
@@ -220,6 +221,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tf_donation"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

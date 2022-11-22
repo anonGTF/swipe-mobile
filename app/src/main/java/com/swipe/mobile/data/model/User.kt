@@ -1,15 +1,13 @@
 package com.swipe.mobile.data.model
 
 import com.google.gson.annotations.SerializedName
-import io.realm.RealmObject
 
-open class User: RealmObject() {
-    @SerializedName("id")
-    var id: Int? = 0
+data class User (
+    val id: Int? = 0,
 
     @SerializedName("name")
-    var name: String? = ""
+    val name: String? = "",
 
     @SerializedName("avatar")
-    var avatar: String? = ""
-}
+    val avatar: String? = ""
+)

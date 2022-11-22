@@ -1,8 +1,8 @@
 package com.swipe.mobile.di
 
-import com.swipe.mobile.data.repository.DonationRepository
-import com.swipe.mobile.data.repository.ReportRepository
-import com.swipe.mobile.data.repository.UserRepository
+import com.swipe.mobile.data.local.Preferences
+import com.swipe.mobile.data.remote.ApiService
+import com.swipe.mobile.data.remote.RetrofitInstance
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,14 +14,9 @@ import javax.inject.Singleton
 object AppModule {
 
     @Provides
-    @Singleton
-    fun provideUserRepository(): UserRepository = UserRepository()
+    fun provideApi(): ApiService = RetrofitInstance().createApi()
 
-    @Provides
     @Singleton
-    fun provideReportRepository(): ReportRepository = ReportRepository()
-
     @Provides
-    @Singleton
-    fun provideDonationRepository(): DonationRepository = DonationRepository()
+    fun providePreferences(): Preferences = Preferences.instance
 }

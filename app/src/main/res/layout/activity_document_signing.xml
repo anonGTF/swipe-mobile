@@ -99,22 +99,38 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
         android:text="Galih Foundation"
-        app:layout_constraintBottom_toTopOf="@id/btn_sign"
-        app:layout_constraintEnd_toEndOf="@id/btn_sign"
-        app:layout_constraintStart_toStartOf="@id/btn_sign"/>
+        app:layout_constraintBottom_toTopOf="@id/ln_sign"
+        app:layout_constraintEnd_toEndOf="@id/ln_sign"
+        app:layout_constraintStart_toStartOf="@id/ln_sign"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_sign"
+    <LinearLayout
+        android:id="@+id/ln_sign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:text="Sign here"
-        android:textColor="@color/black"
-        app:backgroundTint="@color/white"
-        app:strokeWidth="2dp"
-        app:strokeColor="@color/black"
+        android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_pic"/>
+        app:layout_constraintBottom_toTopOf="@id/tv_pic">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign here"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/img_sign"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_pic"/>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_pic"
@@ -125,6 +141,6 @@
         android:layout_marginBottom="24dp"
         android:text="Anto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/btn_sign"
-        app:layout_constraintStart_toStartOf="@id/btn_sign"/>
+        app:layout_constraintEnd_toEndOf="@id/ln_sign"
+        app:layout_constraintStart_toStartOf="@id/ln_sign"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

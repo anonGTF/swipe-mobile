@@ -1,6 +1,9 @@
 package com.swipe.mobile.base
 
+import com.google.gson.annotations.SerializedName
+
 abstract class BaseModel(
+    @SerializedName("_id")
     open val id: Int
 ) {
     override fun equals(other: Any?): Boolean {

@@ -1,46 +1,39 @@
 package com.swipe.mobile.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import io.realm.RealmList
-import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
+import com.swipe.mobile.base.BaseModel
+import kotlinx.parcelize.Parcelize
 
-open class Report : RealmObject() {
-
-    @PrimaryKey
-    @SerializedName("id")
-    var id: Int? = 0
-
-    @SerializedName("title")
-    var title: String? = ""
+@Parcelize
+data class Report (
+    override val id: Int = 0,
+    val title: String? = "",
 
     @SerializedName("description")
-    var desc: String? = ""
+    val desc: String? = "",
 
-    @SerializedName("category")
-    var category: String? = ""
+    val category: String? = "",
 
-    @SerializedName("location")
-    var location: String? = ""
+    val location: String? = "",
 
     @SerializedName("target_donation")
-    var targetDonation: Int? = 0
+    val targetDonation: Int? = 0,
 
-    @SerializedName("status")
-    var status: String? = "initial"
+    val status: String? = "initial",
 
     @SerializedName("due_date")
-    var dueDate: String? = ""
+    val dueDate: String? = "",
 
     @SerializedName("pic_name")
-    var picName: String? = ""
+    val picName: String? = "",
 
     @SerializedName("docs")
-    var docLink: String? = ""
+    val docLink: String? = "",
 
     @SerializedName("donate")
-    var currentDonation: Int? = 0
+    val currentDonation: Int? = 0,
 
     @SerializedName("image")
-    var images: RealmList<String>? = null
-}
+    val images: List<ReportImage>? = null,
+) : BaseModel(id), Parcelable

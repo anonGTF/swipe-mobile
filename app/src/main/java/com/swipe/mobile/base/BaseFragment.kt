@@ -12,9 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.viewbinding.ViewBinding
-import com.swipe.mobile.base.dialog.BaseDialog
-import com.swipe.mobile.base.dialog.BaseDialogInterface
-import com.swipe.mobile.base.recyclerview.BaseRecyclerView
 import com.swipe.mobile.utils.Resource
 import com.swipe.mobile.utils.gone
 import com.swipe.mobile.utils.visible
@@ -47,81 +44,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    protected fun showDialogLoading(dismiss: Boolean, message: String?) {
-        val baseDialog = BaseDialog.BuildBaseDialog()
-            .onBackPressedDismiss(dismiss)
-            .setContent(message)
-            .build(requireActivity())
-        hideSoftKeyboard()
-        baseDialog.show()
-    }
-
-    protected fun showDialogAlert(
-        title: String?,
-        message: String?,
-        confirmCallback: () -> Unit?,
-        drawableImage: Int?
-    ) {
-        val baseDialog = BaseDialog.BuildAlertDialog()
-            .onBackPressedDismiss(false)
-            .setTitle(title)
-            .setContent(message)
-            .setSubmitButtonText("OK")
-            .setImageContent(drawableImage)
-            .setListener(object : BaseDialogInterface {
-                override fun onSubmitClick() {
-                    confirmCallback()
-                }
-
-                override fun onDismissClick() {
-
-                }
-            })
-            .build(requireActivity())
-        hideSoftKeyboard()
-        baseDialog.show()
-    }
-
-    protected fun showDialogConfirmation(
-        title: String?,
-        message: String?,
-        confirmCallback: () -> Unit?,
-        cancelCallback: () -> Unit?,
-        drawableImage: Int?
-    ) {
-        val baseDialog = BaseDialog.BuildConfirmationDialog()
-            .onBackPressedDismiss(false)
-            .setTitle(title)
-            .setContent(message)
-            .setImageContent(drawableImage)
-            .setSubmitButtonText("OK")
-            .setCancelButtonText("Cancel")
-            .setSingleButton(false)
-            .setListener(object : BaseDialogInterface {
-                override fun onSubmitClick() {
-                    confirmCallback()
-                }
-
-                override fun onDismissClick() {
-                    cancelCallback()
-                }
-            })
-            .build(requireActivity())
-        hideSoftKeyboard()
-        baseDialog.show()
-    }
-
-    protected fun showDialogPopImage(drawableImage: Int?) {
-        val baseDialog = BaseDialog.BuildAlertDialog()
-            .onBackPressedDismiss(false)
-            .hideAllButton(true)
-            .showPanelButton(true)
-            .setImageContent(drawableImage)
-            .build(requireActivity())
-        hideSoftKeyboard()
-        baseDialog.show()
     }
 
     private fun hideSoftKeyboard() {
@@ -188,14 +110,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         val intent = Intent(activity, actDestination)
         data?.let { intent.putExtras(data) }
         startActivityForResult(intent, resultCode)
-    }
-
-    fun finishLoad(recycler: BaseRecyclerView?) {
-        recycler?.let {
-            it.getSwipeRefreshLayout().isRefreshing = false
-            it.releaseBlock()
-            it.stopShimmer()
-        }
     }
 
     protected fun changeStatusBarColor(color: Int, iconDark: Boolean = false) {

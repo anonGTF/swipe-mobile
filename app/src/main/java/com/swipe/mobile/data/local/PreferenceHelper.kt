@@ -1,126 +1,57 @@
 package com.swipe.mobile.data.local
 
+import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import com.swipe.mobile.SwipeApplication
+import com.swipe.mobile.data.local.Preferences.Companion.instance
+import java.util.*
 
-class PreferenceHelper {
-    fun saveInt(key: String, value: Int) {
-        val editor = mSharedPreferences?.edit()
-        editor?.putInt(key, value)
-        editor?.apply()
+class Preferences private constructor() {
+    private val mPrefs: SharedPreferences
+    private val mEdit: SharedPreferences.Editor
+
+    val token: String?
+        get() = instance.mPrefs.getString(PREF_TOKEN, "")
+
+    val userID: Int
+        get() = instance.mPrefs.getInt(PREF_USER_ID, 0)
+
+    val isCommunity: Boolean
+        get() = instance.mPrefs.getBoolean(PREF_IS_COMMUNITY, false)
+
+    fun saveToken(value: String?) {
+        mEdit.putString(PREF_TOKEN, value)
+        mEdit.apply()
     }
 
-    fun getInt(key: String): Int? {
-        return if (isKeyExists(key)) {
-            mSharedPreferences?.getInt(key, 0)
-        } else 0
+    fun saveUserId(value: Int) {
+        mEdit.putInt(PREF_USER_ID, value)
+        mEdit.apply()
     }
 
-    fun saveBoolean(key: String, value: Boolean) {
-        val editor = mSharedPreferences?.edit()
-        editor?.putBoolean(key, value)
-        editor?.apply()
-    }
-
-    fun getBoolean(key: String): Boolean? {
-        return if (isKeyExists(key)) {
-            mSharedPreferences?.getBoolean(key, false)
-        } else {
-            false
-        }
-    }
-
-    fun getBooleanNull(key: String): Boolean? {
-        return if (isKeyExists(key)) {
-            mSharedPreferences?.getBoolean(key, false)
-        } else {
-            null
-        }
-    }
-
-    fun saveFloat(key: String, value: Float) {
-        val editor = mSharedPreferences?.edit()
-        editor?.putFloat(key, value)
-        editor?.apply()
-    }
-
-    fun getFloat(key: String): Float? {
-        return if (isKeyExists(key)) {
-            mSharedPreferences?.getFloat(key, 0.0f)
-        } else 0.0f
-    }
-
-
-    fun saveLong(key: String, value: Long) {
-        val editor = mSharedPreferences?.edit()
-        editor?.putLong(key, value)
-        editor?.apply()
-    }
-
-    fun getLong(key: String): Long? {
-        return if (isKeyExists(key)) {
-            mSharedPreferences?.getLong(key, 0)
-        } else 0
-    }
-
-    fun saveString(key: String, value: String) {
-        val editor = mSharedPreferences?.edit()
-        editor?.putString(key, value)
-        editor?.apply()
-    }
-
-    fun getString(key: String): String? {
-        return if (isKeyExists(key)) {
-            mSharedPreferences?.getString(key, null)
-        } else null
-    }
-
-    fun clearSession() {
-        val editor = mSharedPreferences?.edit()
-        editor?.clear()
-        editor?.apply()
-    }
-
-    fun deleteValue(key: String): Boolean {
-        if (this.isKeyExists(key)) {
-            val editor = mSharedPreferences?.edit()
-            editor?.remove(key)
-            editor?.apply()
-            return true
-        }
-
-        return false
-    }
-
-    private fun isKeyExists(key: String): Boolean {
-        val map = mSharedPreferences?.all
-        return map != null && map.containsKey(key)
+    fun saveIsCommunity(value: Boolean) {
+        mEdit.putBoolean(PREF_IS_COMMUNITY, value)
+        mEdit.apply()
     }
 
     companion object {
+        const val PREF_TOKEN = "pref_token"
+        const val PREF_USER_ID = "pref_id"
+        const val PREF_IS_COMMUNITY = "pref_community"
+        const val PREF_KEY = "pref_key"
 
-        private var instance: PreferenceHelper? = null
-        private var mSharedPreferences: SharedPreferences? = null
-
-        fun init(context: Context) {
-            mSharedPreferences = context.getSharedPreferences(context.packageName, Context.MODE_PRIVATE)
-        }
-
-        fun instance(): PreferenceHelper? {
-            if (instance == null) {
-                validateInitialization()
-                synchronized(PreferenceHelper::class.java) {
-                    if (instance == null) {
-                        instance = PreferenceHelper()
-                    }
-                }
+        var INSTANCE: Preferences? = null
+        val instance: Preferences
+            get() {
+                if (INSTANCE == null) INSTANCE = Preferences()
+                return INSTANCE as Preferences
             }
-            return instance
-        }
+    }
 
-        private fun validateInitialization() {
-            if (mSharedPreferences == null)
-                throw Exception("SuitSave Library must be initialized inside your application class by calling SuitSave.init(getApplicationContext)")
-        }
+    init {
+        val app: Application = SwipeApplication.instance
+        mPrefs = app.getSharedPreferences(PREF_KEY, Context.MODE_PRIVATE)
+        mEdit = mPrefs.edit()
     }
 }
